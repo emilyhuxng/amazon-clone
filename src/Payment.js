@@ -24,7 +24,6 @@ function Payment() {
     const [clientSecret, setClientSecret] = useState(true);
 
     useEffect(() => {
-        console.log(getBasketTotal(basket))
         // generate the special stripe secret which allows us to charge a customer
 
         const getClientSecret = async () => {
@@ -38,8 +37,6 @@ function Payment() {
         
         getClientSecret();
     }, [basket])
-
-    console.log('The SECRET IS >>>', clientSecret)
 
     const handleSubmit = async (event) => {
         // fancy stripe stuff
